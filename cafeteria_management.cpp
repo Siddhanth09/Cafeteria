@@ -1,6 +1,16 @@
+/*  Cafeteria Management system or canteen management system is the process of managing from the designing the bill to placing an order to delivery and including payments. 
+Now, automated cafeteria management system has taken over the manual cafeteria system.
+Previously the bills were maintained manually in papers and maintenance of these documents were quite difficult, in order to reduce human effort and mistakes by the manual billing  , computerized billing was introduced. 
+Cafeteria management system is a C Programming project that helps to order and manage the food system in a restaurant. 
+In this project, you can order food as a user by selecting the food items from the menu booklet.*/
+
+
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+
+
 
 
 double price[7] = {55.80 , 30.50 , 50.00 , 35.00 , 59.00 , 99.00 , 150.00 };
@@ -12,12 +22,14 @@ void printMeals();
 void orderMeals();
 double orderForAdult();
 double orderForChildren();
+
+
 int main()
 {
+	
     char response = 'y';
-    
-     
      printMeals();
+	
      while(response == 'y'|| response == 'Y')
     {
             printf("please enter number of adults  :");
@@ -39,6 +51,7 @@ int main()
    return 0;
 }
 
+
 void printMeals()
 {
      
@@ -58,6 +71,8 @@ void printMeals()
       
       printf("\n");
 }
+
+
 void orderMeals()
 {
 	double totalPriceForAdult, totalPriceForChildren;
@@ -92,6 +107,8 @@ void orderMeals()
           printf(" \t\t\tTotal bill after discount\t%5.2f\n",allPayment-discount);
 
 }
+
+
 double orderForAdult()
 {
      int menuOption,i,amount;
@@ -105,6 +122,7 @@ double orderForAdult()
       for(i=0;i<adultNumber;i++)
      {
                printf("adult %d please enter your orders\n",i+1);
+	      
                while(response == 'y' || response == 'Y')
                {
                               printf("please enter your option:");
@@ -134,6 +152,8 @@ double orderForAdult()
      
      return totalAllPerson + ((totalAllPerson * tax) / 100);
 }
+
+
 double orderForChildren()
 {
        int menuOption,i,amount;
@@ -176,5 +196,6 @@ double orderForChildren()
      }
      
      return totalAllChildren + ((totalAllChildren * tax) / 100);
+
 }
 
